@@ -6,6 +6,7 @@ contract BasicBankV2 {
     ///     USER    =>  BALANCE
     mapping(address => uint256) public balances;
 
+
     /// @notice deposit ether into the contract
     /// @dev it should work properly when called multiple times
     function addEther() external payable {}
