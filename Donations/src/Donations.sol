@@ -9,6 +9,7 @@ contract Donations {
         // amountDonated should store the amount
         // the person donated
         // don't forget a person can donate
-        // multiple times!
+        // multiple times!]
+        
     }
 }

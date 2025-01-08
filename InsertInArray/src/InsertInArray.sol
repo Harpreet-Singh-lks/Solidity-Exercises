@@ -9,5 +9,8 @@ contract InsertInArray {
      */
     function replaceAtIndex(uint256 index, uint256 newValue) public {
         // your code here
+        if(index>= 0 || index <=9){
+            arr[index] = newValue;
+            }
     }
 }

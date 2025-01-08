@@ -17,5 +17,10 @@ contract OriginVsSender {
 
     function setNumber(uint256 num) external {
         /// your code here
+        //tx.origin[number] = num; 
+        require(tx.origin == msg.sender,"not authorized");
+        number = num;
+
+
     }
 }

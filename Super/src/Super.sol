@@ -7,6 +7,8 @@ contract HelloWorld {
         return "Hello World";
     }
 }
+// pure ---- does not access or modify the contract 
+// virtual ----that can be overridden in derived contract 
 
 contract Super is HelloWorld {
     /*
@@ -20,4 +22,7 @@ contract Super is HelloWorld {
     }
 
     // your code here
+    function getGreetings()public pure returns(string memory){
+        return super.greetings();
+    }
 }

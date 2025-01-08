@@ -10,8 +10,20 @@ contract Deployer {
 
     function deployContract() public returns (address) {
         // your code here
+        DeployMe deployme = new DeployMe("Hello World");
+        return address(deployme);
     }
 }
 
-contract DeployMe {}
+contract DeployMe {
+    string public message;
+
+    constructor(string memory _message) {
+        message = _message;
+    }
+
+    function setMessage(string memory _message) public {
+        message = _message;
+    }
+}
 

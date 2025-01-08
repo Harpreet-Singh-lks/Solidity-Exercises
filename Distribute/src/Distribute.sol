@@ -11,7 +11,14 @@ contract Distribute {
 
     constructor() payable {}
 
-    function distributeEther(address[] memory addresses) public {
+    function distributeEther(address[] memory addresses) public payable {
         // your code here
+
+        uint amount = address(this).balance/(addresses.length);
+        for (uint i = 0;i<addresses.length;i++){
+        (bool sent, bytes memory data ) = addresses[i].call{value: amount}("");
+        require(sent, "transaction has failed");
+        }
+
     }
 }

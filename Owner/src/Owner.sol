@@ -7,6 +7,7 @@ contract OnlyOwner {
         1. Restrict `updateMagicNumber` function call to only the address
            passed in the constructor.
     */
+   ///// @@@@@@@@@@@@@@@@@@@@@@@@       restriction can done using modifier and other by
 
     address owner;
     uint256 public magicNumber;
@@ -15,8 +16,12 @@ contract OnlyOwner {
         owner = _owner;
         magicNumber = _magicNumber;
     }
+    modifier OnlyOwner(){
+        require(msg.sender == owner," caller is not owner");
+        _;
 
-    function updateMagicNumber(uint256 _number) public {
+    }
+    function updateMagicNumber(uint256 _number) public OnlyOwner {
         magicNumber = _number;
     }
 }
